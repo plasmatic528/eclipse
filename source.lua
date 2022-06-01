@@ -177,18 +177,10 @@ end
 coroutine.wrap(QORP_fake_script)()
 
 Confirm.MouseButton1Click:Connect(function()
-    MainFrame:TweenPosition(UDim2.new(0.396880418, -4,2.423832923, 0), nil, nil, 1)
-    _G.primary = Confirm.Parent.ColorPreview.BackgroundColor3
-    wait(0.01)
-    Hub.MainFrame:TweenPosition(UDim2.new(0.396880418, -4,0.423832923, 0), nil, nil, 1)
-    
-    
-    local Library = {}
+    _G.canexec = true
+end)
 
-local TS = game:GetService("TweenService")
-local UIS = game:GetService("UserInputService")
-local mouse = game.Players.LocalPlayer:GetMouse()
-
+repeat wait() until _G.canexec == true
 function Library:Create(hubname, gamename, presetColor)
 	
 	local Hub = Instance.new("ScreenGui")
@@ -202,6 +194,11 @@ function Library:Create(hubname, gamename, presetColor)
 	local Hubname = Instance.new("TextLabel")
 	local Gamename = Instance.new("TextLabel")
 	local Pages = Instance.new("Folder")
+	
+	        MainFrame:TweenPosition(UDim2.new(0.396880418, -4,2.423832923, 0), nil, nil, 1)
+    _G.primary = Confirm.Parent.ColorPreview.BackgroundColor3
+    wait(0.01)
+    Hub.MainFrame:TweenPosition(UDim2.new(0.396880418, -4,0.423832923, 0), nil, nil, 1)
 	
 	Hub.Name = "Hub"
 	Hub.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -669,5 +666,3 @@ UIPadding.PaddingTop = UDim.new(0, 8)
 	return Win
 	
 end
-		
-end)
