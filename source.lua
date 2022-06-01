@@ -669,8 +669,5 @@ UIPadding.PaddingTop = UDim.new(0, 8)
 	return Win
 	
 end
-
-
-return Library
-
+		
 end)
