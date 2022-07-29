@@ -1,0 +1,54 @@
+--loadstring(game:HttpGet('https://pastebin.com/raw/DvwNJH0P'))()
+--// VARIABLES \\--
+
+local player = game:GetService("Players").LocalPlayer
+
+getgenv().MagDistance = 0 ---@diagnostic disable-line
+getgenv().JPHeight = 50 ---@diagnostic disable-line
+
+--// LIBRARY \\--
+
+local SolarisLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Stebulous/solaris-ui-lib/main/source.lua"))()
+
+local New = SolarisLib:New({
+  Name = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,
+  FolderToSave = "Eclipse"
+})
+
+local MagTab = New:Tab("Catching")
+local Magging = MagTab:Section("Mags")
+
+local PhysicsTab = New:Tab("Physics")
+local JPSection = PhysicsTab:Section("JP Height")
+
+Magging:Slider("Mag Distance", 0, 50, 0, 0.5, "1", function(value)
+    getgenv().MagDistance = value ---@diagnostic disable-line
+    -- console.print('Mag Distance: ' .. value)
+end)
+
+JPSection:Button("JP", function()
+    print('hello')
+end)
+
+--// MAIN \\--
+
+function dist(p1,p2)
+    local pos1 = typeof(p1) == 'Instance' and p1.Position or p1
+    local pos2 = typeof(p2) == 'Instance' and p2.Position or p2
+    return (pos1-pos2).Magnitude
+  end
+
+spawn(function()
+    while task.wait() do
+        if workspace.Balls_Kicks:FindFirstChild("Football") then
+            local ball = workspace.Balls_Kicks.Football
+            if (ball.Position - player.Character.HumanoidRootPart.Position).Magnitude < getgenv().MagDistance then ---@diagnostic disable-line
+                    firetouchinterest(player.Character["Right Arm"], ball, 0) ---@diagnostic disable-line
+                    firetouchinterest(player.Character["Left Arm"], ball, 0) ---@diagnostic disable-line
+                    task.wait(0.1)
+                    firetouchinterest(player.Character["Right Arm"], ball, 1) ---@diagnostic disable-line
+                    firetouchinterest(player.Character["Left Arm"], ball, 1) ---@diagnostic disable-line
+            end
+        end
+    end
+end)
