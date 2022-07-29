@@ -27,7 +27,21 @@ Magging:Slider("Mag Distance", 0, 50, 0, 0.5, "1", function(value)
 end)
 
 JPSection:Button("JP", function()
-    print('hello')
+    getgenv().jumppower = 171.5 ---@diagnostic disable-line
+-- max: 180
+local get=function(x)return game:GetService(x)end local players=get('Players')local ws=get('Workspace')local rs=get('ReplicatedStorage')local rus=get('RunService')local uis=get('UserInputService')local coregui=get('CoreGui')local http=get('HttpService')local ts=get('TeleportService')local lighting=get('Lighting')local plr=players.LocalPlayer local char=(plr and (plr.Character or plr.CharacterAdded:Wait())or nil)local hrp=plr and (char:WaitForChild('HumanoidRootPart'))or nil local hum=plr and (char:WaitForChild('Humanoid'))or nil if plr then plr.CharacterAdded:Connect(function(c)char=c hrp=c:WaitForChild'HumanoidRootPart'hum=c:WaitForChild('Humanoid')end)end local cf=CFrame local v3=Vector3 local ud2=UDim2 local c3=Color3 local rgb=c3.fromRGB local step=rus.Stepped local rstep=rus.RenderStepped local heartbeat=rus.Heartbeat local JSON={stringify=function(...)return http:JSONEncode(...)end,parse=function(...)return http:JSONDecode(...)end}
+local bf = Instance.new("BodyForce",hrp)
+bf.Name = 'FFmover'
+spawn(function()
+    while step:wait() do
+        local JP = getgenv().jumppower/100*10 ---@diagnostic disable-line
+        if not bf then
+            bf = Instance.new("BodyForce",hrp)
+            bf.Name = 'FFmover'
+        end
+        bf.Force = v3.new(0, JP*80, 0)
+    end
+end)
 end)
 
 --// MAIN \\--
