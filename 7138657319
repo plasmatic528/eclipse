@@ -54,8 +54,8 @@ function dist(p1,p2)
 
 spawn(function()
     while task.wait() do
-        if workspace.Balls_Kicks:FindFirstChild("Football") then
-            local ball = workspace.Balls_Kicks.Football
+        if workspace.Balls_Kickz:FindFirstChild("Football") then
+            local ball = workspace.Balls_Kickz.Football
             if (ball.Position - player.Character.HumanoidRootPart.Position).Magnitude < getgenv().MagDistance then ---@diagnostic disable-line
                     firetouchinterest(player.Character["Right Arm"], ball, 0) ---@diagnostic disable-line
                     firetouchinterest(player.Character["Left Arm"], ball, 0) ---@diagnostic disable-line
