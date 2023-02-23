@@ -1,104 +1,53 @@
-local a={['\a']='\\a',['\b']='\\b',['\f']='\\f',['\n']='\\n',['\r']='\\r',['\t']='\\t',['\v']='\\v',['\0']='\\0'}local b={['and']=true,['break']=true,['do']=true,['else']=true,['elseif']=true,['end']=true,['false']=true,['for']=true,['function']=true,['if']=true,['in']=true,['local']=true,['nil']=true,['not']=true,['or']=true,['repeat']=true,['return']=true,['then']=true,['true']=true,['until']=true,['while']=true,['continue']=true}local c={[DockWidgetPluginGuiInfo.new]="DockWidgetPluginGuiInfo.new",[warn]="warn",[CFrame.fromMatrix]="CFrame.fromMatrix",[CFrame.fromAxisAngle]="CFrame.fromAxisAngle",[CFrame.fromOrientation]="CFrame.fromOrientation",[CFrame.fromEulerAnglesXYZ]="CFrame.fromEulerAnglesXYZ",[CFrame.Angles]="CFrame.Angles",[CFrame.fromEulerAnglesYXZ]="CFrame.fromEulerAnglesYXZ",[CFrame.new]="CFrame.new",[gcinfo]="gcinfo",[os.clock]="os.clock",[os.difftime]="os.difftime",[os.time]="os.time",[os.date]="os.date",[tick]="tick",[bit32.band]="bit32.band",[bit32.extract]="bit32.extract",[bit32.bor]="bit32.bor",[bit32.bnot]="bit32.bnot",[bit32.arshift]="bit32.arshift",[bit32.rshift]="bit32.rshift",[bit32.rrotate]="bit32.rrotate",[bit32.replace]="bit32.replace",[bit32.lshift]="bit32.lshift",[bit32.lrotate]="bit32.lrotate",[bit32.btest]="bit32.btest",[bit32.bxor]="bit32.bxor",[pairs]="pairs",[NumberSequence.new]="NumberSequence.new",[assert]="assert",[tonumber]="tonumber",[Color3.fromHSV]="Color3.fromHSV",[Color3.toHSV]="Color3.toHSV",[Color3.fromRGB]="Color3.fromRGB",[Color3.new]="Color3.new",[Delay]="Delay",[Stats]="Stats",[UserSettings]="UserSettings",[coroutine.resume]="coroutine.resume",[coroutine.yield]="coroutine.yield",[coroutine.running]="coroutine.running",[coroutine.status]="coroutine.status",[coroutine.wrap]="coroutine.wrap",[coroutine.create]="coroutine.create",[coroutine.isyieldable]="coroutine.isyieldable",[NumberRange.new]="NumberRange.new",[PhysicalProperties.new]="PhysicalProperties.new",[PluginManager]="PluginManager",[Ray.new]="Ray.new",[NumberSequenceKeypoint.new]="NumberSequenceKeypoint.new",[Version]="Version",[Vector2.new]="Vector2.new",[Instance.new]="Instance.new",[delay]="delay",[spawn]="spawn",[unpack]="unpack",[string.split]="string.split",[string.match]="string.match",[string.gmatch]="string.gmatch",[string.upper]="string.upper",[string.gsub]="string.gsub",[string.format]="string.format",[string.lower]="string.lower",[string.sub]="string.sub",[string.pack]="string.pack",[string.rep]="string.rep",[string.char]="string.char",[string.packsize]="string.packsize",[string.reverse]="string.reverse",[string.byte]="string.byte",[string.unpack]="string.unpack",[string.len]="string.len",[string.find]="string.find",[CellId.new]="CellId.new",[ypcall]="ypcall",[version]="version",[print]="print",[stats]="stats",[printidentity]="printidentity",[settings]="settings",[UDim2.fromOffset]="UDim2.fromOffset",[UDim2.fromScale]="UDim2.fromScale",[UDim2.new]="UDim2.new",[table.pack]="table.pack",[table.move]="table.move",[table.insert]="table.insert",[table.getn]="table.getn",[table.foreachi]="table.foreachi",[table.maxn]="table.maxn",[table.foreach]="table.foreach",[table.concat]="table.concat",[table.unpack]="table.unpack",[table.find]="table.find",[table.create]="table.create",[table.sort]="table.sort",[table.remove]="table.remove",[TweenInfo.new]="TweenInfo.new",[loadstring]="loadstring",[require]="require",[Vector3.FromNormalId]="Vector3.FromNormalId",[Vector3.FromAxis]="Vector3.FromAxis",[Vector3.fromAxis]="Vector3.fromAxis",[Vector3.fromNormalId]="Vector3.fromNormalId",[Vector3.new]="Vector3.new",[Vector3int16.new]="Vector3int16.new",[setmetatable]="setmetatable",[next]="next",[Wait]="Wait",[wait]="wait",[ipairs]="ipairs",[elapsedTime]="elapsedTime",[time]="time",[rawequal]="rawequal",[Vector2int16.new]="Vector2int16.new",[collectgarbage]="collectgarbage",[newproxy]="newproxy",[Spawn]="Spawn",[PluginDrag.new]="PluginDrag.new",[Region3.new]="Region3.new",[utf8.offset]="utf8.offset",[utf8.codepoint]="utf8.codepoint",[utf8.nfdnormalize]="utf8.nfdnormalize",[utf8.char]="utf8.char",[utf8.codes]="utf8.codes",[utf8.len]="utf8.len",[utf8.graphemes]="utf8.graphemes",[utf8.nfcnormalize]="utf8.nfcnormalize",[xpcall]="xpcall",[tostring]="tostring",[rawset]="rawset",[PathWaypoint.new]="PathWaypoint.new",[DateTime.fromUnixTimestamp]="DateTime.fromUnixTimestamp",[DateTime.now]="DateTime.now",[DateTime.fromIsoDate]="DateTime.fromIsoDate",[DateTime.fromUnixTimestampMillis]="DateTime.fromUnixTimestampMillis",[DateTime.fromLocalTime]="DateTime.fromLocalTime",[DateTime.fromUniversalTime]="DateTime.fromUniversalTime",[Random.new]="Random.new",[typeof]="typeof",[RaycastParams.new]="RaycastParams.new",[math.log]="math.log",[math.ldexp]="math.ldexp",[math.rad]="math.rad",[math.cosh]="math.cosh",[math.random]="math.random",[math.frexp]="math.frexp",[math.tanh]="math.tanh",[math.floor]="math.floor",[math.max]="math.max",[math.sqrt]="math.sqrt",[math.modf]="math.modf",[math.pow]="math.pow",[math.atan]="math.atan",[math.tan]="math.tan",[math.cos]="math.cos",[math.sign]="math.sign",[math.clamp]="math.clamp",[math.log10]="math.log10",[math.noise]="math.noise",[math.acos]="math.acos",[math.abs]="math.abs",[math.sinh]="math.sinh",[math.asin]="math.asin",[math.min]="math.min",[math.deg]="math.deg",[math.fmod]="math.fmod",[math.randomseed]="math.randomseed",[math.atan2]="math.atan2",[math.ceil]="math.ceil",[math.sin]="math.sin",[math.exp]="math.exp",[getfenv]="getfenv",[pcall]="pcall",[ColorSequenceKeypoint.new]="ColorSequenceKeypoint.new",[ColorSequence.new]="ColorSequence.new",[type]="type",[Region3int16.new]="Region3int16.new",[ElapsedTime]="ElapsedTime",[select]="select",[getmetatable]="getmetatable",[rawget]="rawget",[Faces.new]="Faces.new",[Rect.new]="Rect.new",[BrickColor.Blue]="BrickColor.Blue",[BrickColor.White]="BrickColor.White",[BrickColor.Yellow]="BrickColor.Yellow",[BrickColor.Red]="BrickColor.Red",[BrickColor.Gray]="BrickColor.Gray",[BrickColor.palette]="BrickColor.palette",[BrickColor.New]="BrickColor.New",[BrickColor.Black]="BrickColor.Black",[BrickColor.Green]="BrickColor.Green",[BrickColor.Random]="BrickColor.Random",[BrickColor.DarkGray]="BrickColor.DarkGray",[BrickColor.random]="BrickColor.random",[BrickColor.new]="BrickColor.new",[setfenv]="setfenv",[UDim.new]="UDim.new",[Axes.new]="Axes.new",[error]="error",[debug.traceback]="debug.traceback",[debug.profileend]="debug.profileend",[debug.profilebegin]="debug.profilebegin"}local function d(e)local f={}local g=1;local h=e;while h do h=h.Parent;g=g+1 end;h=e;local i=0;while h do i=i+1;local j=string.gsub(h.Name,'[%c%z]',a)j=h==game and'game'or j;if b[j]or not string.match(j,'^[_%a][_%w]*$')then j='["'..j..'"]'elseif i~=g-1 then j='.'..j end;f[g-i]=j;h=h.Parent end;return table.concat(f)end;local function k(l,m)if m=='string'then return string.format('"%s"',string.gsub(l,'[%c%z]',a))elseif m=='Instance'then return d(l)elseif type(l)~=m then return m..'.new('..tostring(l)..')'elseif m=='function'then return c[l]or'\'[Unknown '..(pcall(setfenv,l,getfenv(l))and'Lua'or'C')..' '..tostring(l)..']\''elseif m=='userdata'then return'newproxy('..tostring(not not getmetatable(l))..')'elseif m=='thread'then return'\''..tostring(l)..', status: '..coroutine.status(l)..'\''else return tostring(l)end end;getgenv().tableToString=function(n,o,p,q)o=o or{}local r=o[n]if r then return(r[1]==p[1]-1 and'\'[Cyclic Parent 'or'\'[Cyclic ')..tostring(n)..', path: '..r[2]..']\''end;q=q or'ROOT'p=p or{0,q}local s=p[1]+1;p[1]=s;p[2]=q;o[n]=p;local t=string.rep('    ',s)local u=string.rep('    ',s-1)local v='{'local w='\n'..t;local x=true;local y=1;local z=true;for A,l in next,n do z=false;if y~=A then x=false else y=y+1 end;local B,C=typeof(A),typeof(l)local D=false;if B=='string'then A=string.gsub(A,'[%c%z]',a)if b[A]or not string.match(A,'^[_%a][_%w]*$')then D=true;A=string.format('["%s"]',A)end else D=true;A='['..(B=='table'and string.gsub(tableToString(A,o,{s+1,q}),'^%s*(.-)%s*$','%1')or k(A,B))..']'end;l=C=='table'and tableToString(l,o,{s+1,q},q..(D and''or'.')..A)or k(l,C)v=v..w..(x and l or A..' = '..l)..','end;return z and v..'}'or string.sub(v,1,-2)..'\n'..u..'}'end
+local Player = game.Players.LocalPlayer
+local character = game.Players.LocalPlayer.Character
+local humanoidRootPart = character.HumanoidRootPart
+local ball = game.ReplicatedStorage.Values.Ball
+local function isObjectInFront()
+    if game.ReplicatedStorage.Values.Status ~= "InPlay" then return end
+    local t = ball.Value
+    if t then
+           local objectPosition = t.Position
+    local lookDirection = humanoidRootPart.CFrame.lookVector
+    local directionToObject = (objectPosition - humanoidRootPart.Position).unit
 
-local get=function(x)return game:GetService(x)end
-local rs = get('ReplicatedStorage')
+    local dotProduct = lookDirection:Dot(directionToObject)
 
-local remotes = rs.Remotes
-local mainRemote = remotes.CharacterSoundEvent
-
-local argStr1 = '0.8338429595947261,\n    0.8338429595947261,\n    0.8338429595947262,\n    0.8338429595947263,\n    0.8338429595947264'
-local argStr2 = '0.8338429595947267,\n    0.8338429595947267,\n    0.8338429595947267,\n    0.8338429595947268,\n    0.8338429595947269'
-
-local numberSequences = { { 0.8338429595947261, 0.8338429595947261, 0.8338429595947262, 0.8338429595947263, 0.8338429595947264 }, { 0.8338429595947267, 0.8338429595947267, 0.8338429595947267, 0.8338429595947268, 0.8338429595947269 } }
-local lastNumbers
-local mt = getrawmetatable(game)
-local oldnc = mt.__namecall
-setreadonly(mt, false)
-mt.__namecall = newcclosure(function(Self, a1, a2, ...)
-	local method = getnamecallmethod()
-	if not checkcaller() and method:lower():find('fireserver') and typeof(a1) == 'string' and a1 == 'AC' then
-		local safe = tableToString(a2):find(argStr1) or tableToString(a2):find(argStr2)
-		if safe then
-			local lastNumbers = tableToString(a2):find(argStr1) and 1 or 2
-		else
-			local numberSeqToUse = lastNumbers == 1 and 2 or 1
-			local numSeq = numberSequences[numberSeqToUse]
-			for i,n in pairs(numSeq) do
-				rawset(a2,i+1,n)
-			end
-			return oldnc(Self, a1, a2, ...)
-		end
-	end
-	return oldnc(Self, a1, a2, ...)
-end)
-setreadonly(mt, true)
-
-getgenv().delay = hookfunction(delay,function(t,func,...)
-	local _script = getfenv(func).script
-	if _script.Name == 'LocalScript' and tostring(_script.Parent) == 'PlayerModule' then
-		return
-	else
-		return delay(t,function()end)
-	end
-end)
-
-task.wait(0.1)
-
-local PreFrame = Instance.new("ScreenGui")
-local Main = Instance.new("Frame")
-local DropShadow = Instance.new("Frame")
-local TextLabel = Instance.new("TextLabel")
-PreFrame.Name = "PreFrame"
-PreFrame.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-
-Main.Name = "Main"
-Main.Parent = PreFrame
-Main.AnchorPoint = Vector2.new(0.5, 0.5)
-Main.BackgroundColor3 = Color3.fromRGB(0, 19, 33)
-Main.BackgroundTransparency = 1.000
-Main.BorderSizePixel = 0
-Main.Position = UDim2.new(0.5, 0, 0.5, 0)
-Main.Size = UDim2.new(0, 294, 0, 100)
-
-DropShadow.Name = "DropShadow"
-DropShadow.Parent = Main
-DropShadow.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-DropShadow.BackgroundTransparency = 1.000
-DropShadow.BorderSizePixel = 0
-DropShadow.Position = UDim2.new(0, 4, 0, 4)
-DropShadow.Size = UDim2.new(1, 0, 1, 0)
-
-TextLabel.Parent = Main
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.Position = UDim2.new(0.0340136066, 0, 0.239999995, 0)
-TextLabel.Size = UDim2.new(0, 274, 0, 51)
-TextLabel.Font = Enum.Font.TitilliumWeb
-TextLabel.Text = "A project by Blizzard"
-TextLabel.TextColor3 = Color3.fromRGB(227, 227, 227)
-TextLabel.TextScaled = true
-TextLabel.TextTransparency = 1.000
-TextLabel.TextWrapped = true
-
-game:GetService("TweenService"):Create(TextLabel, TweenInfo.new(0.5), {TextTransparency = 0}):Play()
-game:GetService("TweenService"):Create(DropShadow, TweenInfo.new(0.5), {BackgroundTransparency = 0}):Play()
-game:GetService("TweenService"):Create(Main, TweenInfo.new(0.5), {BackgroundTransparency = 0}):Play()
-task.wait(2)
-if game.PlaceId == 8204899140 then
-    TextLabel.Text = "Detecting Game"
-    task.wait(0.6)
-    TextLabel.Text = "Football Fusion 2"
-    task.wait(1)
-    TextLabel.Text = "Loading: "
-    task.wait(0.5)
-    TextLabel.Text = "Loading: Anticheat bypass"
-    task.wait(0.7)
-    TextLabel.Text = "Loading: Configurations"
-    task.wait(1)
-    TextLabel.Text = "Completed!"
+    if dotProduct > 0 then
+        for i = 0,1 do
+            workspace.Football.CFrame = game.Players.LocalPlayer.Character.CatchRight.CFrame
+        end
+    end
+    end
 end
-task.wait(2)
-game:GetService("TweenService"):Create(TextLabel, TweenInfo.new(0.5), {TextTransparency = 1}):Play()
-game:GetService("TweenService"):Create(DropShadow, TweenInfo.new(0.5), {BackgroundTransparency = 1}):Play()
-game:GetService("TweenService"):Create(Main, TweenInfo.new(0.5), {BackgroundTransparency = 1}):Play()
-task.wait(2)
+
+
+
+function MagnetBall()
+    game.RunService.Stepped:Connect(function()
+        if Player.Character:FindFirstChild("CatchRight") == nil then return end
+        if Player.Character:FindFirstChild("CatchLeft") == nil then return end
+        if getgenv().MagnetsEnabled == false then return end
+        Player.Character.CatchRight.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame - Vector3.new(0,0.18,0)
+        local Ball = game.ReplicatedStorage.Values.Ball.Value
+        if Ball ~= nil then
+             Player.Character.CatchLeft.Size = Vector3.new(5,getgenv().MagnetDistance,5)
+        Player.Character.CatchRight.Size = Vector3.new(5,getgenv().MagnetDistance,5)
+        Player.Character.CatchRight.Transparency = 1
+        Player.Character.CatchLeft.Transparency = 1
+        Player.Character.CatchLeft.CFrame = CFrame.new(Player.Character.CatchLeft.Position, Ball.Position)
+                Player.Character.CatchRight.CFrame = CFrame.new(Player.Character.CatchRight.Position, Ball.Position)
+            if Ball:IsA("Part") then
+                if (Ball.Position * Vector3.new(0,1,0) - Player.Character.HumanoidRootPart.Position * Vector3.new(0,1,0)).magnitude < 1 then
+                                                    Player.Character.CatchLeft.CFrame = CFrame.new(Player.Character.CatchLeft.Position, Ball.Position)
+                Player.Character.CatchRight.CFrame = CFrame.new(Player.Character.CatchRight.Position, Ball.Position)
+                end
+                                Player.Character.CatchLeft.CFrame = CFrame.new(Player.Character.CatchLeft.Position, Ball.Position)
+                Player.Character.CatchRight.CFrame = CFrame.new(Player.Character.CatchRight.Position, Ball.Position)
+            elseif Ball:IsA("Tool") then
+            end
+        end
+    end)
+end
+MagnetBall()
+
+warn('Every script loaded without issue.')
