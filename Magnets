@@ -1,3 +1,8 @@
+local Player = game.Players.LocalPlayer
+local character = game.Players.LocalPlayer.Character
+local humanoidRootPart = character.HumanoidRootPart
+local ball = game.ReplicatedStorage.Values.Ball
+
 if Player.Character:FindFirstChild("CatchRight") == nil then return end
         if Player.Character:FindFirstChild("CatchLeft") == nil then return end
         if getgenv().MagnetsEnabled == false then return end
